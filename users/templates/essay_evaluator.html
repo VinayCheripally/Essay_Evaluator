@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Essay Checker</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      textarea {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      button {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      #result {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="/essayevaluator" method="post">
+      {% csrf_token %}
+      <div class="container">
+        <h1>Essay evaluator</h1>
+        <textarea
+          name="title"
+          id="title"
+          cols="30"
+          rows="1"
+          placeholder="Enter the title of essay"
+        ></textarea>
+        <textarea
+          name="essay"
+          id="essay"
+          cols="30"
+          rows="10"
+          placeholder="Enter the essay"
+        ></textarea>
+        <button id="check">Check Essay</button>
+      </div>
+    </form>
+    {% if rating %}
+    <h1>essay score : {{ rating }}</h1>
+    {% endif %} {% if count %}
+    <h1>count : {{ count }}</h1>
+    {% endif %} {% if related %}
+    <h1>related : {{ related }}</h1>
+    {% endif %}
+  </body>
+</html>
