@@ -86,7 +86,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'googlelogin.wsgi.application'
+WSGI_APPLICATION = 'googlelogin.wsgi.app'
 
 
 # Database
