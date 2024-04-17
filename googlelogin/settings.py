@@ -94,12 +94,8 @@ WSGI_APPLICATION = 'googlelogin.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'default',
-        'PASSWORD': 'I8xelcLbZzj6',
-        'HOST': 'containers-us-west-92.railway.app',
-        'PORT': '5526',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -152,6 +148,5 @@ AUTHENTICATION_BACKENDS = (
 
 LOGIN_REDIRECT_URL="/essayevaluator/"
 LOGOUT_REDIRECT_URL = "/"
-
 STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
