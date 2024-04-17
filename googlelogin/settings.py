@@ -26,7 +26,7 @@ SECRET_KEY = 'b2mzik-3=+3nn=%@1gv@9bc07h-a#qt65+2afhhlm-pkqqxjr*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app','.now.sh']
+ALLOWED_HOSTS = ['.vercel.app','.now.sh', '127.0.0.1']
 
 
 # Application definition
@@ -86,7 +86,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'googlelogin.wsgi.application'
+WSGI_APPLICATION = 'googlelogin.wsgi.app'
 
 
 # Database
