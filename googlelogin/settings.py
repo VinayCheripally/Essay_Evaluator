@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -24,9 +24,9 @@ SITE_ID = 2
 SECRET_KEY = 'b2mzik-3=+3nn=%@1gv@9bc07h-a#qt65+2afhhlm-pkqqxjr*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['.vercel.app','.now.sh']
+ALLOWED_HOSTS = ['.vercel.app','.now.sh','localhost','127.0.0.1']
 
 
 # Application definition
@@ -94,8 +94,12 @@ WSGI_APPLICATION = 'googlelogin.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'default',
+        'PASSWORD': 'I8xelcLbZzj6',
+        'HOST': 'containers-us-west-92.railway.app',
+        'PORT': '5526',
     }
 }
 
@@ -148,3 +152,6 @@ AUTHENTICATION_BACKENDS = (
 
 LOGIN_REDIRECT_URL="/essayevaluator/"
 LOGOUT_REDIRECT_URL = "/"
+
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
