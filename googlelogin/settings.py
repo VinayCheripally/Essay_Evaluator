@@ -134,8 +134,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# client_id = "134139312088-rmc8ted01knssulg6icnhs1hua5iccd7.apps.googleusercontent.com"
-# client_secret = "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"
+client_id = "735727979600-a4kqpo1uiaa81uspjqkbas3ic6lkuo6s.apps.googleusercontent.com"
+client_secret = "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"
 
 AUTHENTICATION_BACKENDS = (
     "django.contrib.auth.backends.ModelBackend",
