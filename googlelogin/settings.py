@@ -99,7 +99,7 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': 'HlPEjQroxFZaJEbdupQsNvSWMFCksDmN',
         'HOST': 'monorail.proxy.rlwy.net',
-        'PORT': '16307',
+        'PORT': 16307,
     }
 }
 
