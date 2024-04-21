@@ -93,7 +93,16 @@ WSGI_APPLICATION = 'googlelogin.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'HlPEjQroxFZaJEbdupQsNvSWMFCksDmN',
+        'HOST': 'monorail.proxy.rlwy.net',
+        'PORT': '16307',
+    }
 }
+
 
 
 # Password validation
