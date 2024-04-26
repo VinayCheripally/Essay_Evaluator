@@ -25,7 +25,7 @@ SECRET_KEY = 'b2mzik-3=+3nn=%@1gv@9bc07h-a#qt65+2afhhlm-pkqqxjr*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-
+import dj_database_url
 ALLOWED_HOSTS = ['.vercel.app','.now.sh','localhost','127.0.0.1']
 
 
@@ -94,14 +94,12 @@ WSGI_APPLICATION = 'googlelogin.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'HlPEjQroxFZaJEbdupQsNvSWMFCksDmN',
-        'HOST': 'monorail.proxy.rlwy.net',
-        'PORT': 16307,
+        'ENGINE':'django.db.backends.sqlite3',
+        'NAME':BASE_DIR/'db.sqlite3'
     }
 }
+
+DATABASES['default'] = dj_database_url.config()
 
 
 
