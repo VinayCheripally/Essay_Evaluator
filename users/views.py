@@ -20,13 +20,16 @@ def login(request):
     if request.method=='POST':
         username = request.POST['username']
         password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            return redirect('home')
-        else:
-            context = {'error': 'Invalid username or password'}
-            return render(request, 'login.html', context)
+        try:
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('home')
+            else:
+                context = {'error': 'Invalid username or password'}
+                return render(request, 'login.html', context)
+        except Exception:
+            return "helo"
     return render(request,'login.html')
 
 def essayevaluator(request):
