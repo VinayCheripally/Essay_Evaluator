@@ -9,15 +9,13 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
-from pathlib import Path
 import os
-from decouple import config
+from pathlib import Path
+# from decouple import config
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SITE_ID = 2
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
@@ -92,15 +90,19 @@ WSGI_APPLICATION = 'googlelogin.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+DATABASE_URL = "postgres://default:I8xelcLbZzj6@ep-solitary-surf-a4xl6pnm-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require"
+
 
 DATABASES = {
-    'default': {
-        'ENGINE':'django.db.backends.sqlite3',
-        'NAME':BASE_DIR/'db.sqlite3'
-    }
+    'default': dj_database_url.config(default=DATABASE_URL)
 }
 
-DATABASES['default'] = dj_database_url.config()
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 
@@ -134,7 +136,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+# USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)

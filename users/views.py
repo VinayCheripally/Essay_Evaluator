@@ -22,8 +22,10 @@ def login(request):
         password = request.POST['password']
         try:
             user = authenticate(request, username=username, password=password)
-        except Exception:
-            context = {'error': Exception.__context__}
+            print(user)
+        except Exception as e:
+            print(e)
+            context = {'error': Exception}
             return render(request, 'login.html', context)
         if user is not None:
             login(request, user)
@@ -96,12 +98,12 @@ def essayevaluator(request):
 
 def signup(request):
     if request.method=='POST':
-        email = request.POST['email']
-        username = request.POST['username']
-        password = request.POST['password']
-        first_name = request.POST['firstname'],
-        last_name = request.POST['lastname']
         try:
+            email = request.POST['email']
+            username = request.POST['username']
+            password = request.POST['password']
+            first_name = request.POST['firstname'],
+            last_name = request.POST['lastname']
             new_user = User.objects.create_user(
             username=username,
             email=email,
@@ -112,9 +114,12 @@ def signup(request):
             is_active = True,
             date_joined = datetime.now()
             )
-        except IntegrityError:
-            context = {'error': 'User with same username already exists so use a new username'}
-            return render(request,"signup.html",context)
-        new_user.save()
+            new_user.save()
+        # except Exception as e:
+        #     print(e)
+        #     context = {'error': 'User with same username already exists so use a new username'}
+        #     return render(request,"signup.html",context)
+        except IntegrityError as er:
+            print(er)
         return redirect('login')
     return render(request,"signup.html")
