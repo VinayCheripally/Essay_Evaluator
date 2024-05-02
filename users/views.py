@@ -23,7 +23,7 @@ def login(request):
         try:
             user = authenticate(request, username=username, password=password)
         except Exception:
-            context = {'error': 'authentication error'}
+            context = {'error': Exception}
             return render(request, 'login.html', context)
         if user is not None:
             login(request, user)
