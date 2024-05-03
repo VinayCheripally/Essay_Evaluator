@@ -152,7 +152,7 @@ AUTHENTICATION_BACKENDS = (
     "allauth.account.auth_backends.AuthenticationBackend"
 )
 
-LOGIN_REDIRECT_URL="/"
+LOGIN_REDIRECT_URL="/essayevaluator"
 LOGOUT_REDIRECT_URL = "/"
 # STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
