@@ -17,6 +17,8 @@ def logout_view(request):
     return redirect("/")
 
 def login_view(request):
+    if not request.user.is_anonymous:
+        return redirect("/essayevaluator")
     if request.method=='POST':
         username = request.POST['username']
         password = request.POST['password']
