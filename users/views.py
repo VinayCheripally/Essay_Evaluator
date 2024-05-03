@@ -119,7 +119,8 @@ def signup(request):
         #     print(e)
         #     context = {'error': 'User with same username already exists so use a new username'}
         #     return render(request,"signup.html",context)
-        except IntegrityError as er:
-            print(er)
+        except Exception as r:
+            print(r)
+        print("success")
         return redirect('login')
     return render(request,"signup.html")
