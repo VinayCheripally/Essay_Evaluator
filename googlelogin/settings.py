@@ -15,7 +15,7 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SITE_ID = 2
+SITE_ID = 3
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
@@ -23,7 +23,7 @@ SITE_ID = 2
 SECRET_KEY = 'b2mzik-3=+3nn=%@1gv@9bc07h-a#qt65+2afhhlm-pkqqxjr*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 import dj_database_url
 ALLOWED_HOSTS = ['.vercel.app','.now.sh','localhost','127.0.0.1']
 
