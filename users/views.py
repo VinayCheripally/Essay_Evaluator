@@ -5,7 +5,7 @@ from datetime import datetime
 from django.db import IntegrityError
 from openai import OpenAI
 User = get_user_model()
-api_key = "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"
+api_key = "sk-proj-EbThbOYQSoVbTOxJF3hlT3BlbkFJ1v4MlvH9qm98icygMQJY"
 client = OpenAI(api_key=api_key)
 
 
