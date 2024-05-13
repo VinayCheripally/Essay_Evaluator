@@ -5,8 +5,6 @@ from datetime import datetime
 from django.db import IntegrityError
 from openai import OpenAI
 User = get_user_model()
-api_key = "sk-proj-7nPNSqzL3J1EiQqqX9ITT3BlbkFJRYZnKC6r9cMl5YSyeJvG"
-client = OpenAI(api_key=api_key)
 
 
 def home(request):
@@ -37,6 +35,8 @@ def essayevaluator(request):
     if  request.method == "POST":
         essay = request.POST['essay']
         title = request.POST['title']
+        api_key = request.POST['api_key']
+        client = OpenAI(api_key=api_key)
         response_rating = client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[

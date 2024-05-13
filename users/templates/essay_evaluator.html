@@ -43,11 +43,20 @@
       <div class="container">
         <h1>Essay evaluator</h1>
         <textarea
+          name="api_key"
+          id="api_key"
+          cols="30"
+          rows="1"
+          placeholder="Enter the Open AI api key"
+          required
+        ></textarea>
+        <textarea
           name="title"
           id="title"
           cols="30"
           rows="1"
           placeholder="Enter the title of essay"
+          required
         ></textarea>
         <textarea
           name="essay"
@@ -55,6 +64,7 @@
           cols="30"
           rows="10"
           placeholder="Enter the essay"
+          required
         ></textarea>
         <button id="check">Check Essay</button>
       </div>
