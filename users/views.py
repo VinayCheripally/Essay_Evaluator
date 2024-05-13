@@ -59,7 +59,7 @@ def essayevaluator(request):
         messages=[
         {
         "role": "system",
-        "content": "Please provide me with the count of spelling errors in the essay. I will be looking for common errors such as 'teh' instead of 'the', 'recieve' instead of 'receive', and 'definately' instead of 'definitely'. Here is the essay. Just provide me the number of errors you find, Just an Integer nothing else."
+        "content": "Please analyze the following essay for spelling errors and provide a list of the incorrectly spelled words along with their indices in the text. Here is the essay: {essay_text}. Please respond in the following format: [{'word': 'incorrectly_spelled_word', 'index': incorrectly_spelled_word_index}, ...]"
         },
         {
         "role": "user",
