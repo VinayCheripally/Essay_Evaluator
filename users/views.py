@@ -59,7 +59,7 @@ def essayevaluator(request):
         messages=[
         {
         "role": "system",
-        "content": "Please analyze the following essay for spelling errors and provide a list of incorrectly spelled words along with their starting and ending indices in the text. Please respond in the following format: [{'word': 'incorrectly_spelled_word', 'start_index': start_index, 'end_index': end_index}, ...]"
+        "content": "Please analyze the following essay for spelling errors and provide a list of potentially misspelled words along with their starting and ending indices in the text. Consider names and proper nouns as correctly spelled unless accompanied by clear indications of error. Prioritize suggesting corrections for words that are more likely to be misspelled than names or proper nouns. Here is the essay: {essay_text}. Please respond in the following format: [{'word': 'potentially_misspelled_word', 'start_index': start_index, 'end_index': end_index}, ...]"
         },
         {
         "role": "user",
