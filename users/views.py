@@ -5,7 +5,7 @@ from datetime import datetime
 from django.db import IntegrityError
 from openai import OpenAI
 User = get_user_model()
-api_key = "sk-proj-EbThbOYQSoVbTOxJF3hlT3BlbkFJ1v4MlvH9qm98icygMQJY"
+api_key = "sk-proj-7nPNSqzL3J1EiQqqX9ITT3BlbkFJRYZnKC6r9cMl5YSyeJvG"
 client = OpenAI(api_key=api_key)
 
 
@@ -59,7 +59,7 @@ def essayevaluator(request):
         messages=[
         {
         "role": "system",
-        "content": "Please provide me with the count of spelling errors in the essay. I will be looking for common errors such as 'teh' instead of 'the', 'recieve' instead of 'receive', and 'definately' instead of 'definitely'. Here is the essay. Just provide me the number of errors you find, nothing else."
+        "content": "Please provide me with the count of spelling errors in the essay. I will be looking for common errors such as 'teh' instead of 'the', 'recieve' instead of 'receive', and 'definately' instead of 'definitely'. Here is the essay. Just provide me the number of errors you find, Just an Integer nothing else."
         },
         {
         "role": "user",
