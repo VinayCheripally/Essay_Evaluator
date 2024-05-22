@@ -42,7 +42,7 @@ def essayevaluator(request):
         messages=[
         {
         "role": "system",
-        "content": "Please rate the following essay out of 10, taking into account the following criteria: clarity of argument, organization, use of evidence, and grammar and spelling. Please provide a number from 1-10, with 10 being the highest possible score.Just give me the score , nothing more.Here is the title and content of the essay:"
+        "content": "Please rate the following essay out of 10, taking into account the following criteria: clarity of argument, organization, use of evidence, and grammar and spelling. Please provide a number from 1-10, with 10 being the highest possible score. Additionally, provide a brief justification for the score given."
         },
         {
         "role": "user",
@@ -76,7 +76,7 @@ def essayevaluator(request):
         messages=[
         {
         "role": "system",
-        "content": "Please provide me with a yes or no answer to the following question: Does the content of the essay directly relate to the title provided? Ignore any tangential connections or loosely related ideas. Just provide a simple yes or no, nothing else. Here is the title and content:"
+        "content": "Please provide me with a yes or no answer to the following question: Does the content of the essay directly relate to the title provided? Ignore any tangential connections or loosely related ideas. Just provide a simple yes or no, with a brief justification for the answer."
         },
         {
         "role": "user",
