@@ -1,16 +1,11 @@
 #!/bin/bash
-# Exit immediately if a command exits with a non-zero status
-# set -e
+# Build the project
+echo "Building the project..."
+python3.9 -m pip install -r requirements.txt
 
-# Upgrade pip, then install specific versions of setuptools and wheel
-pip install --upgrade pip
-pip install setuptools==57.5.0 wheel==0.36.2
+echo "Make Migration..."
+python3.9 manage.py makemigrations --noinput
+python3.9 manage.py migrate --noinput
 
-# Install the dependencies from requirements.txt
-pip install -r requirements.txt
-
-# Run Django migrations
-# python manage.py migrate
-
-# Collect static files
-python manage.py collectstatic --noinput
+echo "Collect Static..."
+python3.9 manage.py collectstatic --noinput --clear
